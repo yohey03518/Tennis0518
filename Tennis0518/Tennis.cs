@@ -23,16 +23,16 @@ namespace Tennis0518
             {
                 return "Love All";
             }
-            
-            Dictionary<int, string> pointText = new Dictionary<int, string>()
-            {
-                {0, "Love" },
-                {1, "Fifteen" },
-                {2, "Thirty" },
-                {3, "Forty" }
-            };
-            return string.Format("{0} {1}", pointText[player1Point], pointText[player2Point]);
+            return string.Format("{0} {1}", PointText[player1Point], PointText[player2Point]);
         }
+
+        private static Dictionary<int, string> PointText = new Dictionary<int, string>()
+        {
+            {0, "Love"},
+            {1, "Fifteen"},
+            {2, "Thirty"},
+            {3, "Forty"}
+        };
 
         internal void Player1Scored()
         {

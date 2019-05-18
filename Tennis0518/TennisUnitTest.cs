@@ -69,8 +69,8 @@ namespace Tennis0518
         [TestCase]
         public void Deuce()
         {
-            Player1ScoreTimes(4);
-            Player2ScoreTimes(4);
+            Player1ScoreTimes(3);
+            Player2ScoreTimes(3);
             PointShouldBe("Deuce");
         }
 

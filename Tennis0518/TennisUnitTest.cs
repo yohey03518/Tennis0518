@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace Tennis0518
 {
@@ -41,6 +42,21 @@ namespace Tennis0518
         {
             Player1ScoreTimes(3);
             PointShouldBe("Forty Love");
+        }
+
+        [TestCase]
+        public void LoveFifteen()
+        {
+            Player2ScoreTimes(1);
+            PointShouldBe("Love Fifteen");
+        }
+
+        private void Player2ScoreTimes(int times)
+        {
+            for (int j = 0; j < times; j++)
+            {
+                game.Player2Scored();
+            }
         }
 
         private void Player1ScoreTimes(int times)

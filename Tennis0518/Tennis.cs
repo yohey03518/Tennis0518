@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Tennis0518
 {
@@ -8,6 +9,7 @@ namespace Tennis0518
         private string player2;
 
         private int player1Point;
+        private int player2Point;
 
         public Tennis(string player1, string player2)
         {
@@ -17,24 +19,29 @@ namespace Tennis0518
 
         internal string ShowPoint()
         {
-            if (player1Point == 1)
+            if (player1Point == 0 && player2Point == 0)
             {
-                return "Fifteen Love";
+                return "Love All";
             }
-            else if (player1Point == 2)
+            
+            Dictionary<int, string> pointText = new Dictionary<int, string>()
             {
-                return "Thirty Love";
-            }
-            else if(player1Point == 3)
-            {
-                return "Forty Love";
-            }
-            return "Love All";
+                {0, "Love" },
+                {1, "Fifteen" },
+                {2, "Thirty" },
+                {3, "Forty" }
+            };
+            return string.Format("{0} {1}", pointText[player1Point], pointText[player2Point]);
         }
 
         internal void Player1Scored()
         {
             player1Point++;
+        }
+
+        internal void Player2Scored()
+        {
+            player2Point++;
         }
     }
 }

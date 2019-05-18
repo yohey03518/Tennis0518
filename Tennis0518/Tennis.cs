@@ -25,9 +25,12 @@ namespace Tennis0518
                     return "Deuce";
                 return $"{PointText[player1Point]} All";
             }
-            else if (player1Point > 3 && player1Point - player2Point == 1)
+            else if ((player1Point > 3 || player2Point > 3) && Math.Abs(player1Point-player2Point) == 1)
             {
-                return $"{player1} Adv";
+                if (player1Point > player2Point)
+                    return $"{player1} Adv";
+                else
+                    return $"{player2} Adv";
             }
             return $"{PointText[player1Point]} {PointText[player2Point]}";
         }

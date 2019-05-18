@@ -25,16 +25,23 @@ namespace Tennis0518
         [TestCase]
         public void FifteenLove()
         {
-            game.Player1Scored();
+            Player1ScoreTimes(1);
             PointShouldBe("Fifteen Love");
         }
 
         [TestCase]
         public void ThirtyLove()
         {
-            game.Player1Scored();
-            game.Player1Scored();
+            Player1ScoreTimes(2);
             PointShouldBe("Thirty Love");
+        }
+
+        private void Player1ScoreTimes(int times)
+        {
+            for (int j = 0; j < times; j++)
+            {
+                game.Player1Scored();
+            }
         }
 
         private void PointShouldBe(string expected)

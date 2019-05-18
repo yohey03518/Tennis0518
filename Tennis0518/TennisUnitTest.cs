@@ -29,6 +29,14 @@ namespace Tennis0518
             PointShouldBe("Fifteen Love");
         }
 
+        [TestCase]
+        public void ThirtyLove()
+        {
+            game.Player1Scored();
+            game.Player1Scored();
+            PointShouldBe("Thirty Love");
+        }
+
         private void PointShouldBe(string expected)
         {
             string result = game.ShowPoint();

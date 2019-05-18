@@ -21,6 +21,10 @@ namespace Tennis0518
             {
                 return "Fifteen Love";
             }
+            else if (player1Point == 2)
+            {
+                return "Thirty Love";
+            }
             return "Love All";
         }
 

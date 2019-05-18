@@ -19,9 +19,9 @@ namespace Tennis0518
 
         internal string ShowPoint()
         {
-            if (player1Point == 0 && player2Point == 0)
+            if (player1Point == player2Point)
             {
-                return "Love All";
+                return string.Format("{0} All", PointText[player1Point]);
             }
             return string.Format("{0} {1}", PointText[player1Point], PointText[player2Point]);
         }

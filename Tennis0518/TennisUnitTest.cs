@@ -19,16 +19,20 @@ namespace Tennis0518
         [TestCase]
         public void LoveAll()
         {
-            string result = game.ShowPoint();
-            Assert.AreEqual("Love All", result);
+            PointShouldBe("Love All");
         }
 
         [TestCase]
         public void FifteenLove()
         {
             game.Player1Scored();
+            PointShouldBe("Fifteen Love");
+        }
+
+        private void PointShouldBe(string expected)
+        {
             string result = game.ShowPoint();
-            Assert.AreEqual("Fifteen Love", result);
+            Assert.AreEqual(expected, result);
         }
     }
 }

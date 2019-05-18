@@ -25,14 +25,31 @@ namespace Tennis0518
                     return "Deuce";
                 return $"{PointText[player1Point]} All";
             }
-            else if ((player1Point > 3 || player2Point > 3) && Math.Abs(player1Point-player2Point) == 1)
+            else if (AnyPlayerGreaterThen3())
             {
+                if (PointDiffAbsIs1())
+                {
+                    if (player1Point > player2Point)
+                        return $"{player1} Adv";
+                    else
+                        return $"{player2} Adv";
+                }
                 if (player1Point > player2Point)
-                    return $"{player1} Adv";
+                    return $"{player1} Win";
                 else
-                    return $"{player2} Adv";
+                    return $"{player2} Win";
             }
             return $"{PointText[player1Point]} {PointText[player2Point]}";
+        }
+
+        private bool PointDiffAbsIs1()
+        {
+            return Math.Abs(player1Point - player2Point) == 1;
+        }
+
+        private bool AnyPlayerGreaterThen3()
+        {
+            return (player1Point > 3 || player2Point > 3);
         }
 
         private bool PointIsSame()

@@ -90,6 +90,22 @@ namespace Tennis0518
             PointShouldBe($"{player2} Adv");
         }
 
+        [TestCase]
+        public void Player1Win()
+        {
+            Player1ScoreTimes(4);
+            Player2ScoreTimes(0);
+            PointShouldBe($"{player1} Win");
+        }
+
+        [TestCase]
+        public void Player2Win()
+        {
+            Player1ScoreTimes(3);
+            Player2ScoreTimes(5);
+            PointShouldBe($"{player2} Win");
+        }
+
         private void Player2ScoreTimes(int times)
         {
             for (int j = 0; j < times; j++)

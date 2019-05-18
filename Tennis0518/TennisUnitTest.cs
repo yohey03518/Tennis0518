@@ -66,6 +66,14 @@ namespace Tennis0518
             PointShouldBe("Fifteen All");
         }
 
+        [TestCase]
+        public void Deuce()
+        {
+            Player1ScoreTimes(4);
+            Player2ScoreTimes(4);
+            PointShouldBe("Deuce");
+        }
+
         private void Player2ScoreTimes(int times)
         {
             for (int j = 0; j < times; j++)

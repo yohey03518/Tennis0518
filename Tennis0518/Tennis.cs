@@ -21,6 +21,8 @@ namespace Tennis0518
         {
             if (player1Point == player2Point)
             {
+                if (player1Point >= 4)
+                    return "Deuce";
                 return string.Format("{0} All", PointText[player1Point]);
             }
             return string.Format("{0} {1}", PointText[player1Point], PointText[player2Point]);

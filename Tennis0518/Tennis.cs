@@ -19,17 +19,22 @@ namespace Tennis0518
 
         internal string ShowPoint()
         {
-            if (player1Point == player2Point)
+            if (PointIsSame())
             {
                 if (player1Point >= 3)
                     return "Deuce";
-                return string.Format("{0} All", PointText[player1Point]);
+                return $"{PointText[player1Point]} All";
             }
             else if (player1Point > 3 && player1Point - player2Point == 1)
             {
                 return $"{player1} Adv";
             }
-            return string.Format("{0} {1}", PointText[player1Point], PointText[player2Point]);
+            return $"{PointText[player1Point]} {PointText[player2Point]}";
+        }
+
+        private bool PointIsSame()
+        {
+            return player1Point == player2Point;
         }
 
         private static Dictionary<int, string> PointText = new Dictionary<int, string>()
